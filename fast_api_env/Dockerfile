@@ -10,12 +10,11 @@ RUN pip install -r requirements.txt
 RUN pip install python-multipart
 
 
-
-RUN pip install -r requirements.txt
 RUN poetry config virtualenvs.create false
 RUN poetry install
 
+COPY init.sql /docker-entrypoint-initdb.d/
 
-COPY . ./app/
+COPY . .
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8002", "--reload"]
