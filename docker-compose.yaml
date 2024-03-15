@@ -1,0 +1,50 @@
+version: '3'
+services:
+
+  fast_api_flask:
+    container_name: "FastAPI-env"
+    build:
+      context: ${LOCAL_PATH}/fast_api_env
+    volumes:
+      - data_volume:/app/data
+    ports:
+      - "8002:8002"
+    networks:
+      - my_network
+    depends_on:
+      - postgres-db
+
+  pyspark_notebook:
+    container_name: "pyspark_notebook-service"
+    build:
+      context: ${LOCAL_PATH}/spark_env
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    command: start-notebook.sh --ip=0.0.0.0
+    networks:
+      - my_network
+    depends_on:
+      - postgres-db
+
+  postgres-db:
+    container_name: "postgres-db"
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - data_volume:/var/lib/postgresql/data
+    networks:
+      - my_network
+    environment:
+      POSTGRES_DB: 'mercadoPago'
+      POSTGRES_USER: 'myuser'
+      POSTGRES_PASSWORD: 'mypassword'
+
+volumes:
+  data_volume:
+
+networks:
+  my_network:
