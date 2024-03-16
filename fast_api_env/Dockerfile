@@ -15,6 +15,6 @@ RUN poetry install
 
 COPY init.sql /docker-entrypoint-initdb.d/
 
-COPY . .
+COPY . ./app/
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8002", "--reload"]

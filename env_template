@@ -1,7 +1,1 @@
 LOCAL_PATH=/home/vagrant/MercadoPago/MP_Data_Eng
-
-DB_USER = "myuser"
-DB_PASSWORD = "mypassword"
-DB_HOST = "localhost"
-DB_PORT = "3309"
-DB_NAME = "mercadoPago"
