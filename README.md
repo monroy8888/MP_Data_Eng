@@ -28,7 +28,7 @@ El dataset a construir deberá contar con la siguiente información:
 
 ● por cada print:
 
-     ○ un campo que indique si se hizo click o no
+     ○ Un campo que indique si se hizo click o no
 
      ○ cantidad de veces que el usuario vio cada value prop en las 3 semanas previas a ese print.
 
