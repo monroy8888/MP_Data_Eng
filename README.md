@@ -74,7 +74,7 @@ El dataset a construir deberá contar con la siguiente información:
 
 ***Tree***
 
-'''
+```
 .
 ├── Makefile
 ├── README.md
@@ -108,7 +108,7 @@ El dataset a construir deberá contar con la siguiente información:
     └── taps.json
 
 
-'''
+```
 
 
 ***Transformación (Transform):***
