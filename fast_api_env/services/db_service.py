@@ -1,5 +1,5 @@
 from .queries import queries
-from ..connection.mysql_connection import database
+from connection.mysql_connection import database
 
 
 async def select_data(table_name):

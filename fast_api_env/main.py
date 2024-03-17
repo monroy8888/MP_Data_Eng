@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from .controllers.controllers import router
-from .connection.mysql_connection import database
+from controllers.controllers import router
+from connection.mysql_connection import database
 
 app = FastAPI()
 app.include_router(router)

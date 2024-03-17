@@ -1,7 +1,7 @@
 from typing import Annotated
 import logging
 from fastapi import APIRouter, HTTPException, status
-from ..services.db_service import select_data, select_query
+from services.db_service import select_data, select_query
 
 
 router = APIRouter()
